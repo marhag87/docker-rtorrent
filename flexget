@@ -1,0 +1,3 @@
+if [[ -s /rtorrent/.flexget/config.yml ]]; then
+  su --login --command="/usr/bin/flexget execute" rtorrent
+fi
