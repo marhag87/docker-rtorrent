@@ -7,5 +7,6 @@ useradd -u $RT_UID -g $RT_GID -d /rtorrent -m rtorrent 2>/dev/null
 mkdir -p /rtorrent/{session,torrents,download}
 chown -R rtorrent:rtorrent /rtorrent
 
+crond -n &
 nginx &
 exec su --login --command="TERM=xterm /usr/bin/rtorrent -d /rtorrent/torrents -s /rtorrent/session -o directory=/rtorrent/download -o scgi_port=localhost:5000" rtorrent
